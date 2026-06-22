@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSY Enterprises — Software & Digital Company, Karachi</title>
+<meta name="description" content="Software development, web design, and digital marketing company in DHA Karachi. Websites, apps, and digital solutions that actually work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#0D0D0D;
+  --paper:#F0EDE6;
+  --card:#161616;
+  --card2:#1C1C1E;
+  --teal:#00C2A8;
+  --teal-dim:#007F6E;
+  --teal-faint:rgba(0,194,168,0.08);
+  --muted:#8A8A8A;
+  --divider:rgba(240,237,230,0.1);
+  --font-display:'Syne',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ─────────────────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 4rem;
+  border-bottom:1px solid var(--divider);
+  background:rgba(13,13,13,0.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+.nav-logo{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:1.1rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+.nav-logo span{color:var(--teal)}
+
+.nav-links{
+  display:flex;gap:2.5rem;
+  font-size:0.85rem;
+  font-weight:400;
+  letter-spacing:0.04em;
+  color:var(--muted);
+}
+
+.nav-links a:hover{color:var(--paper);transition:color 0.2s}
+
+.nav-cta{
+  font-family:var(--font-display);
+  font-size:0.8rem;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:0.55rem 1.4rem;
+  border:1px solid var(--teal);
+  color:var(--teal);
+  cursor:pointer;
+  transition:background 0.2s,color 0.2s;
+}
+.nav-cta:hover{background:var(--teal);color:var(--ink)}
+
+/* ── HERO ─────────────────────────────────────────────────────────────── */
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:0 4rem;
+  padding-top:6rem;
+  gap:4rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-left{
+  position:relative;
+  z-index:2;
+}
+
+.hero-eyebrow{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  letter-spacing:0.18em;
+  color:var(--teal);
+  text-transform:uppercase;
+  margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.hero-eyebrow::before{
+  content:'';display:block;width:2rem;height:1px;background:var(--teal);
+}
+
+.hero-headline{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(3rem,5.5vw,5.5rem);
+  line-height:1.0;
+  letter-spacing:-0.02em;
+  margin-bottom:1.75rem;
+}
+
+.hero-headline .line{
+  display:block;
+  overflow:hidden;
+}
+
+.hero-headline .word{
+  display:inline-block;
+  transform:translateY(110%);
+  opacity:0;
+}
+
+.hero-headline .accent{color:var(--teal)}
+
+.hero-body{
+  font-size:1.05rem;
+  font-weight:300;
+  color:rgba(240,237,230,0.65);
+  line-height:1.75;
+  max-width:38ch;
+  margin-bottom:2.5rem;
+}
+
+.hero-actions{
+  display:flex;align-items:center;gap:1.25rem;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  font-family:var(--font-display);
+  font-size:0.85rem;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  padding:0.9rem 2.2rem;
+  background:var(--teal);
+  color:var(--ink);
+  cursor:pointer;
+  transition:background 0.2s,transform 0.15s;
+  border:none;
+  display:inline-block;
+}
+.btn-primary:hover{background:#00dfc2;transform:translateY(-1px)}
+
+.btn-ghost{
+  font-family:var(--font-display);
+  font-size:0.85rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  padding:0.9rem 2.2rem;
+  border:1px solid rgba(240,237,230,0.25);
+  color:rgba(240,237,230,0.75);
+  cursor:pointer;
+  transition:border-color 0.2s,color 0.2s;
+  display:inline-flex;align-items:center;gap:0.5rem;
+}
+.btn-ghost:hover{border-color:var(--paper);color:var(--paper)}
+
+.btn-ghost svg{transition:transform 0.2s}
+.btn-ghost:hover svg{transform:translateX(3px)}
+
+/* Hero canvas */
+.hero-right{
+  position:relative;
+  height:520px;
+  display:flex;align-items:center;justify-content:center;
+}
+#network-canvas{
+  width:100%;height:100%;
+  opacity:0.9;
+}
+
+/* Scroll indicator */
+.scroll-hint{
+  position:absolute;bottom:2.5rem;left:4rem;
+  display:flex;align-items:center;gap:0.75rem;
+  font-family:var(--font-mono);
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.scroll-line{
+  width:3rem;height:1px;background:var(--muted);
+  transform-origin:left;
+  animation:scroll-pulse 2s ease-in-out infinite;
+}
+@keyframes scroll-pulse{0%,100%{transform:scaleX(1);opacity:0.4}50%{transform:scaleX(0.5);opacity:1}}
+
+/* ── TICKER ───────────────────────────────────────────────────────────── */
+.ticker-bar{
+  border-top:1px solid var(--divider);
+  border-bottom:1px solid var(--divider);
+  padding:1rem 0;
+  overflow:hidden;
+  background:var(--card);
+}
+.ticker-track{
+  display:flex;gap:0;
+  animation:ticker 28s linear infinite;
+  white-space:nowrap;
+}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{
+  font-family:var(--font-display);
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:0 3rem;
+  flex-shrink:0;
+}
+.ticker-item span{color:var(--teal);margin-right:0.5rem}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SECTION COMMONS ─────────────────────────────────────────────────── */
+section{padding:7rem 4rem}
+
+.section-eyebrow{
+  font-family:var(--font-mono);
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  color:var(--teal);
+  text-transform:uppercase;
+  margin-bottom:1.25rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.section-eyebrow::before{
+  content:'';display:block;width:1.5rem;height:1px;background:var(--teal);
+}
+
+.section-title{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(2rem,3.5vw,3.2rem);
+  letter-spacing:-0.02em;
+  line-height:1.1;
+  margin-bottom:1rem;
+}
+
+/* ── SERVICES ─────────────────────────────────────────────────────────── */
+#services{background:var(--ink)}
+
+.services-intro{
+  max-width:50ch;
+  color:rgba(240,237,230,0.6);
+  font-size:1.05rem;
+  font-weight:300;
+  margin-bottom:4rem;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--divider);
+  border:1px solid var(--divider);
+}
+
+.service-card{
+  background:var(--ink);
+  padding:2.5rem;
+  position:relative;
+  overflow:hidden;
+  transition:background 0.3s;
+}
+.service-card:hover{background:var(--card2)}
+
+.service-num{
+  font-family:var(--font-mono);
+  font-size:0.65rem;
+  color:var(--teal);
+  letter-spacing:0.1em;
+  margin-bottom:1.5rem;
+}
+
+.service-icon{
+  width:2.5rem;height:2.5rem;
+  margin-bottom:1.25rem;
+  opacity:0.9;
+}
+
+.service-name{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.2rem;
+  letter-spacing:-0.01em;
+  margin-bottom:0.75rem;
+}
+
+.service-desc{
+  font-size:0.9rem;
+  font-weight:300;
+  color:rgba(240,237,230,0.55);
+  line-height:1.65;
+}
+
+.service-card::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--teal);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s ease;
+}
+.service-card:hover::after{transform:scaleX(1)}
+
+/* ── PROOF / STATS ────────────────────────────────────────────────────── */
+#proof{
+  background:var(--card);
+  border-top:1px solid var(--divider);
+  border-bottom:1px solid var(--divider);
+  padding:5rem 4rem;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap:1px;
+  background:var(--card);
+}
+
+.stat-item{
+  background:var(--card);
+  padding:2rem 3rem;
+  border-right:1px solid var(--divider);
+}
+.stat-item:last-child{border-right:none}
+
+.stat-num{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:3.5rem;
+  letter-spacing:-0.03em;
+  color:var(--paper);
+  line-height:1;
+  margin-bottom:0.5rem;
+}
+.stat-num sup{font-size:1.5rem;color:var(--teal)}
+
+.stat-label{
+  font-size:0.85rem;
+  font-weight:300;
+  color:var(--muted);
+  letter-spacing:0.05em;
+}
+
+/* ── REVIEWS ─────────────────────────────────────────────────────────── */
+#reviews{background:var(--ink)}
+
+.reviews-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1.5rem;
+  margin-top:3.5rem;
+}
+
+.review-card{
+  background:var(--card);
+  border:1px solid var(--divider);
+  padding:2rem;
+  position:relative;
+  transition:border-color 0.3s;
+}
+.review-card:hover{border-color:rgba(0,194,168,0.3)}
+
+.review-stars{
+  display:flex;gap:3px;margin-bottom:1rem;
+}
+.star{
+  width:12px;height:12px;fill:#F5C842;
+}
+
+.review-quote{
+  font-size:0.95rem;
+  font-weight:300;
+  line-height:1.7;
+  color:rgba(240,237,230,0.8);
+  margin-bottom:1.25rem;
+  font-style:italic;
+}
+
+.review-author{
+  font-family:var(--font-display);
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--teal);
+}
+
+.review-card::before{
+  content:'"';
+  position:absolute;top:-0.5rem;left:1.5rem;
+  font-family:var(--font-display);
+  font-size:6rem;
+  font-weight:800;
+  line-height:1;
+  color:rgba(0,194,168,0.08);
+  pointer-events:none;
+}
+
+/* Google badge */
+.google-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  margin-top:2rem;
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  letter-spacing:0.1em;
+  color:var(--muted);
+}
+.google-badge svg{width:16px;height:16px}
+
+/* ── WHY US ────────────────────────────────────────────────────────────── */
+#why{
+  background:var(--card);
+  border-top:1px solid var(--divider);
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  align-items:center;
+  margin-top:0;
+}
+
+.why-left{}
+
+.why-right{}
+
+.why-list{
+  display:flex;flex-direction:column;gap:0;
+  margin-top:3rem;
+}
+
+.why-item{
+  display:grid;
+  grid-template-columns:3rem 1fr;
+  gap:1.5rem;
+  align-items:start;
+  padding:1.75rem 0;
+  border-bottom:1px solid var(--divider);
+}
+.why-item:first-child{border-top:1px solid var(--divider)}
+
+.why-num{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--teal);
+  padding-top:0.25rem;
+}
+
+.why-item-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1rem;
+  margin-bottom:0.4rem;
+}
+
+.why-item-body{
+  font-size:0.9rem;
+  font-weight:300;
+  color:rgba(240,237,230,0.55);
+  line-height:1.65;
+}
+
+/* Big accent visual on right */
+.why-visual{
+  position:relative;
+  height:460px;
+  display:flex;align-items:center;justify-content:center;
+}
+.why-rating-ring{
+  width:220px;height:220px;
+  border:1px solid var(--divider);
+  border-radius:50%;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;
+}
+.why-rating-ring::before{
+  content:'';
+  position:absolute;inset:-12px;
+  border-radius:50%;
+  border:1px solid rgba(0,194,168,0.25);
+}
+.why-rating-ring::after{
+  content:'';
+  position:absolute;inset:-28px;
+  border-radius:50%;
+  border:1px solid rgba(0,194,168,0.1);
+}
+.ring-num{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:4.5rem;
+  letter-spacing:-0.04em;
+  color:var(--paper);
+  line-height:1;
+}
+.ring-denom{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:1.2rem;
+  color:var(--muted);
+  margin-top:0.25rem;
+}
+.ring-label{
+  font-family:var(--font-mono);
+  font-size:0.6rem;
+  letter-spacing:0.18em;
+  color:var(--teal);
+  text-transform:uppercase;
+  margin-top:0.5rem;
+}
+.why-dots{
+  position:absolute;
+  width:100%;height:100%;
+  top:0;left:0;
+  pointer-events:none;
+}
+.why-dot{
+  position:absolute;
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--teal);
+  opacity:0.4;
+}
+
+/* ── CONTACT ─────────────────────────────────────────────────────────── */
+#contact{
+  background:var(--ink);
+  border-top:1px solid var(--divider);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  margin-top:3.5rem;
+}
+
+.contact-info-block{
+  display:flex;flex-direction:column;gap:2rem;
+}
+
+.contact-info-item{
+  display:grid;
+  grid-template-columns:1.5rem 1fr;
+  gap:1rem;
+  align-items:start;
+}
+
+.contact-info-icon{
+  color:var(--teal);
+  font-size:1rem;
+  padding-top:0.1rem;
+}
+
+.contact-info-label{
+  font-family:var(--font-mono);
+  font-size:0.6rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:0.35rem;
+}
+
+.contact-info-value{
+  font-size:0.95rem;
+  font-weight:400;
+  color:rgba(240,237,230,0.85);
+  line-height:1.5;
+}
+
+.contact-info-value a:hover{color:var(--teal)}
+
+.contact-cta-box{
+  background:var(--card);
+  border:1px solid var(--divider);
+  padding:3rem;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+
+.contact-cta-title{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:2rem;
+  letter-spacing:-0.02em;
+  line-height:1.15;
+  margin-bottom:1rem;
+}
+
+.contact-cta-body{
+  font-size:0.9rem;
+  font-weight:300;
+  color:rgba(240,237,230,0.55);
+  line-height:1.65;
+  margin-bottom:2rem;
+}
+
+.contact-methods{
+  display:flex;flex-direction:column;gap:0.75rem;
+}
+
+.contact-method-btn{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.9rem 1.25rem;
+  border:1px solid var(--divider);
+  font-size:0.88rem;
+  font-weight:400;
+  color:rgba(240,237,230,0.75);
+  cursor:pointer;
+  transition:border-color 0.2s,background 0.2s;
+}
+.contact-method-btn:hover{border-color:var(--teal);background:var(--teal-faint);color:var(--paper)}
+
+.contact-method-btn svg{flex-shrink:0;color:var(--teal)}
+
+/* ── FOOTER ─────────────────────────────────────────────────────────── */
+footer{
+  background:var(--card);
+  border-top:1px solid var(--divider);
+  padding:2.5rem 4rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.footer-logo{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:0.9rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+.footer-logo span{color:var(--teal)}
+
+.footer-copy{
+  font-size:0.8rem;
+  color:var(--muted);
+  font-family:var(--font-mono);
+}
+
+.footer-links{
+  display:flex;gap:2rem;
+  font-size:0.8rem;
+  color:var(--muted);
+}
+.footer-links a:hover{color:var(--paper);transition:color 0.2s}
+
+/* ── ANIMATIONS ────────────────────────────────────────────────────────── */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+.reveal.in{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+  .ticker-track{animation:none}
+  .hero-headline .word{transform:none;opacity:1}
+  .scroll-line{animation:none}
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+@media(max-width:1024px){
+  nav{padding:1rem 2rem}
+  #hero{grid-template-columns:1fr;padding:7rem 2rem 4rem;gap:3rem}
+  .hero-right{height:280px}
+  #proof{grid-template-columns:1fr 1fr;padding:3rem 2rem}
+  .services-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr;gap:2rem}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  section{padding:4rem 2rem}
+  footer{flex-direction:column;gap:1.5rem;text-align:center}
+  .footer-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">BSY<span>.</span>ENT</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#reviews">Clients</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="tel:+923178954604" class="nav-cta">Call Us</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">DHA Phase 6 · Karachi · Est. 2019</div>
+    <h1 class="hero-headline">
+      <span class="line"><span class="word">We</span> <span class="word">build</span></span>
+      <span class="line"><span class="word">things</span> <span class="word">that</span></span>
+      <span class="line"><span class="word accent">actually</span></span>
+      <span class="line"><span class="word">work.</span></span>
+    </h1>
+    <p class="hero-body">Software, websites, and digital marketing for businesses that are serious about growth. We listen first. We deliver fast. We don't disappear after launch.</p>
+    <div class="hero-actions">
+      <a href="tel:+923178954604" class="btn-primary">Start a Project</a>
+      <a href="#reviews" class="btn-ghost">
+        See Client Results
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <canvas id="network-canvas"></canvas>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track" id="ticker">
+    <div class="ticker-item"><span>✦</span> Web Development</div>
+    <div class="ticker-item"><span>✦</span> Digital Marketing</div>
+    <div class="ticker-item"><span>✦</span> UI / UX Design</div>
+    <div class="ticker-item"><span>✦</span> Mobile Apps</div>
+    <div class="ticker-item"><span>✦</span> Brand Identity</div>
+    <div class="ticker-item"><span>✦</span> SEO & Growth</div>
+    <div class="ticker-item"><span>✦</span> Software Solutions</div>
+    <div class="ticker-item"><span>✦</span> E-Commerce</div>
+    <div class="ticker-item"><span>✦</span> Web Development</div>
+    <div class="ticker-item"><span>✦</span> Digital Marketing</div>
+    <div class="ticker-item"><span>✦</span> UI / UX Design</div>
+    <div class="ticker-item"><span>✦</span> Mobile Apps</div>
+    <div class="ticker-item"><span>✦</span> Brand Identity</div>
+    <div class="ticker-item"><span>✦</span> SEO & Growth</div>
+    <div class="ticker-item"><span>✦</span> Software Solutions</div>
+    <div class="ticker-item"><span>✦</span> E-Commerce</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-eyebrow">What we do</div>
+  <h2 class="section-title reveal">Full-stack digital<br>from the ground up.</h2>
+  <p class="services-intro reveal">We cover the full build — design, development, and the marketing that makes sure people actually find you. One team, no handoffs, no excuses.</p>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="32" height="22" rx="2"/><path d="M14 33h12M20 29v4"/><path d="M9 17l5 4-5 4"/><path d="M19 25h8"/></svg>
+      <div class="service-name">Web Development</div>
+      <p class="service-desc">Fast, responsive websites and web apps. We build on the right stack for your business, not whatever was last trendy.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h16l8 8v24H4V4h8z"/><path d="M20 4v8h16"/><path d="M12 20h16M12 26h10"/></svg>
+      <div class="service-name">Custom Software</div>
+      <p class="service-desc">Business process automation, dashboards, and internal tools. If it's slowing you down, we'll fix it with code.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><path d="M20 6c0 0-7 5-7 14s7 14 7 14"/><path d="M20 6c0 0 7 5 7 14s-7 14-7 14"/><path d="M6 20h28"/></svg>
+      <div class="service-name">Digital Marketing</div>
+      <p class="service-desc">SEO, social media, and paid campaigns that bring in the right customers — not just traffic that bounces.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="4" width="14" height="24" rx="2"/><rect x="16" y="7" width="20" height="29" rx="2"/><path d="M20 32h8M24 36v-4"/></svg>
+      <div class="service-name">UI / UX Design</div>
+      <p class="service-desc">Interfaces that your users actually understand. We prototype, test, and deliver designs your developers can actually build.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="24" height="24" rx="12"/><circle cx="20" cy="20" r="4"/><path d="M20 8v4M20 28v4M8 20h4M28 20h4"/></svg>
+      <div class="service-name">Brand Identity</div>
+      <p class="service-desc">Logos, guidelines, and visual systems that make you look like you mean business — because you do.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34l8-16 6 8 5-6 9 14H6z"/><circle cx="30" cy="12" r="4"/></svg>
+      <div class="service-name">E-Commerce</div>
+      <p class="service-desc">Online stores built to sell. Optimized checkout, inventory management, and integrations that keep running while you sleep.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="proof">
+  <div class="stat-item reveal">
+    <div class="stat-num">4.8<sup>★</sup></div>
+    <div class="stat-label">Google rating</div>
+  </div>
+  <div class="stat-item reveal" style="transition-delay:0.1s">
+    <div class="stat-num">33<sup>+</sup></div>
+    <div class="stat-label">Verified reviews</div>
+  </div>
+  <div class="stat-item reveal" style="transition-delay:0.2s">
+    <div class="stat-num">5<sup>+</sup></div>
+    <div class="stat-label">Years in DHA Karachi</div>
+  </div>
+  <div class="stat-item reveal" style="transition-delay:0.3s">
+    <div class="stat-num">100<sup>%</sup></div>
+    <div class="stat-label">Project ownership, always</div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-eyebrow">Client reviews</div>
+  <h2 class="section-title reveal">What clients actually say<br>on Google.</h2>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+      </div>
+      <p class="review-quote">"The team at BSY Enterprises was professional, responsive, and went above and beyond to ensure that my website was exactly what I wanted. They listened to my needs and provided valuable input and suggestions throughout the process. The end result was a beautifully designed and user-friendly website that accurately reflects my brand. I highly recommend BSY Enterprises Services to anyone in need of a new website — they truly exceeded my expectations!"</p>
+      <div class="review-author">Zahid K.</div>
+    </div>
+    <div class="review-card reveal" style="transition-delay:0.1s">
+      <div class="review-stars">
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+      </div>
+      <p class="review-quote">"I recently had the pleasure of using the website services offered by BSY Enterprise and I am extremely satisfied with the results. The team at BSY Enterprise was professional, responsive, and delivered a high-quality product in a timely manner."</p>
+      <div class="review-author">Hafiz M.</div>
+    </div>
+    <div class="review-card reveal" style="transition-delay:0.2s">
+      <div class="review-stars">
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+        <svg class="star" viewBox="0 0 12 12"><path d="M6 1l1.39 2.82L10.5 4.3l-2.25 2.19.53 3.1L6 8.02 3.22 9.6l.53-3.1L1.5 4.3l3.11-.48L6 1z"/></svg>
+      </div>
+      <p class="review-quote">"Recently worked with team BSY Enterprise — it was a great experience with highly skilled professionals."</p>
+      <div class="review-author">Google Reviewer</div>
+    </div>
+  </div>
+  <div class="google-badge">
+    <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+    Verified Google Reviews · 4.8 stars · 33 reviews
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="why-grid">
+    <div class="why-left">
+      <div class="section-eyebrow">Why BSY</div>
+      <h2 class="section-title reveal">We're the team you call<br>and actually reach.</h2>
+      <div class="why-list">
+        <div class="why-item reveal">
+          <div class="why-num">01</div>
+          <div>
+            <div class="why-item-title">You own everything</div>
+            <p class="why-item-body">Code, designs, accounts — all yours from day one. No hostage websites, no hidden lock-ins. We hand it over completely.</p>
+          </div>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.1s">
+          <div class="why-num">02</div>
+          <div>
+            <div class="why-item-title">We listen before we build</div>
+            <p class="why-item-body">Every project starts with a proper brief. We ask questions most agencies skip, because the wrong website costs more than no website.</p>
+          </div>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.2s">
+          <div class="why-num">03</div>
+          <div>
+            <div class="why-item-title">Locally based, globally current</div>
+            <p class="why-item-body">We're in DHA Karachi — you can walk in. The tech we use is the same as any agency in London or Dubai. Best of both.</p>
+          </div>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.3s">
+          <div class="why-num">04</div>
+          <div>
+            <div class="why-item-title">Post-launch isn't goodbye</div>
+            <p class="why-item-body">Ongoing support, updates, and marketing management. We built it, so we already know how to maintain it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="why-visual">
+        <div class="why-rating-ring">
+          <div class="ring-num">4.8</div>
+          <div class="ring-denom">out of 5</div>
+          <div class="ring-label">Google Rating</div>
+        </div>
+        <div class="why-dots">
+          <div class="why-dot" style="top:15%;left:20%;animation:float1 4s ease-in-out infinite"></div>
+          <div class="why-dot" style="top:25%;right:18%;animation:float2 5s ease-in-out infinite"></div>
+          <div class="why-dot" style="bottom:20%;left:25%;animation:float1 3.5s ease-in-out infinite reverse"></div>
+          <div class="why-dot" style="bottom:15%;right:22%;animation:float2 4.5s ease-in-out infinite reverse"></div>
+          <div class="why-dot" style="top:50%;left:8%;animation:float1 6s ease-in-out infinite;width:4px;height:4px"></div>
+          <div class="why-dot" style="top:50%;right:8%;animation:float2 5.5s ease-in-out infinite;width:4px;height:4px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+</style>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow">Get in touch</div>
+  <h2 class="section-title reveal">Let's build something<br>worth talking about.</h2>
+  <div class="contact-grid">
+    <div class="contact-info-block reveal">
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1C6.24 1 4 3.24 4 6c0 4 5 11 5 11s5-7 5-11c0-2.76-2.24-5-5-5z"/><circle cx="9" cy="6" r="2"/></svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Address</div>
+          <div class="contact-info-value">Plot 11-C, Lane 5, Khayaban-e-Seher<br>Commercial Area, DHA Phase 6<br>Karachi, 75500 — Pakistan</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h3l1.5 3.75-2.25 1.5A12 12 0 0010.75 12.75l1.5-2.25L16 12v3a1.5 1.5 0 01-1.5 1.5C6.75 16.5 1.5 11.25 1.5 4.5A1.5 1.5 0 013 3z"/></svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Phone</div>
+          <div class="contact-info-value"><a href="tel:+923178954604">+92 317 895 4604</a></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M2 5l7 5 7-5"/></svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="mailto:info@bsyenterprises.com">info@bsyenterprises.com</a></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l2.5 2.5"/></svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Office Hours</div>
+          <div class="contact-info-value">Monday – Saturday<br>9:00 AM – 5:30 PM PKT</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-cta-box reveal" style="transition-delay:0.15s">
+      <div>
+        <div class="contact-cta-title">Ready when you are.</div>
+        <p class="contact-cta-body">Drop us a call or swing by the office. We're in DHA Phase 6 — central, easy to find, and very much open for business.</p>
+      </div>
+      <div class="contact-methods">
+        <a href="tel:+923178954604" class="contact-method-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h3l1.5 3.75-2.25 1.5A12 12 0 0010.75 12.75l1.5-2.25L16 12v3a1.5 1.5 0 01-1.5 1.5C6.75 16.5 1.5 11.25 1.5 4.5A1.5 1.5 0 013 3z"/></svg>
+          Call +92 317 895 4604
+        </a>
+        <a href="https://maps.google.com/?q=BSY+Enterprises+DHA+Phase+6+Karachi" target="_blank" rel="noopener" class="contact-method-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1C6.24 1 4 3.24 4 6c0 4 5 11 5 11s5-7 5-11c0-2.76-2.24-5-5-5z"/><circle cx="9" cy="6" r="2"/></svg>
+          Get Directions on Google Maps
+        </a>
+        <a href="https://wa.me/923178954604" target="_blank" rel="noopener" class="contact-method-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5a7.5 7.5 0 017.5 7.5c0 4.142-3.358 7.5-7.5 7.5a7.46 7.46 0 01-3.93-1.11L1.5 16.5l1.115-4.04A7.46 7.46 0 011.5 9 7.5 7.5 0 019 1.5z"/><path d="M6.5 7c0 0 .5 1 1.5 2s2 1.5 2 1.5"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">BSY<span>.</span>ENT</div>
+  <div class="footer-copy">© 2025 BSY Enterprises®. DHA Phase 6, Karachi.</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+/* ── HERO NETWORK ANIMATION ───────────────────────────────────────────── */
+(function(){
+  const canvas = document.getElementById('network-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], frame = 0, built = false;
+
+  const TEAL = '#00C2A8';
+  const TEAL_DIM = 'rgba(0,194,168,0.18)';
+  const PAPER = 'rgba(240,237,230,';
+
+  function resize(){
+    const r = canvas.parentElement.getBoundingClientRect();
+    W = canvas.width = r.width;
+    H = canvas.height = r.height;
+  }
+
+  function randomNode(){
+    return {
+      x: Math.random()*W,
+      y: Math.random()*H,
+      vx: (Math.random()-0.5)*0.35,
+      vy: (Math.random()-0.5)*0.35,
+      r: Math.random()*2 + 1.5,
+      pulse: Math.random()*Math.PI*2,
+      lit: Math.random() < 0.15,
+      birth: frame + Math.floor(Math.random()*60),
+      alpha: 0
+    };
+  }
+
+  function init(){
+    nodes = [];
+    const count = Math.floor(W/22);
+    for(let i=0;i<count;i++) nodes.push(randomNode());
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    frame++;
+
+    nodes.forEach(n=>{
+      if(frame < n.birth) return;
+      n.alpha = Math.min(1, n.alpha + 0.025);
+      n.x += n.vx;
+      n.y += n.vy;
+      if(n.x < 0||n.x > W) n.vx *= -1;
+      if(n.y < 0||n.y > H) n.vy *= -1;
+      n.pulse += 0.018;
+    });
+
+    const live = nodes.filter(n=>frame>=n.birth);
+
+    for(let i=0;i<live.length;i++){
+      for(let j=i+1;j<live.length;j++){
+        const a=live[i], b=live[j];
+        const dx=a.x-b.x, dy=a.y-b.y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        const maxDist = Math.min(W,H)*0.32;
+        if(dist<maxDist){
+          const opacity = (1-dist/maxDist)*0.22 * Math.min(a.alpha,b.alpha);
+          ctx.beginPath();
+          ctx.strokeStyle=`rgba(0,194,168,${opacity})`;
+          ctx.lineWidth=0.7;
+          ctx.moveTo(a.x,a.y);
+          ctx.lineTo(b.x,b.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    live.forEach(n=>{
+      const glow = (Math.sin(n.pulse)+1)*0.5;
+      if(n.lit){
+        ctx.beginPath();
+        ctx.arc(n.x,n.y,n.r*3.5,0,Math.PI*2);
+        ctx.fillStyle=`rgba(0,194,168,${0.04*glow*n.alpha})`;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(0,194,168,${(0.6+0.4*glow)*n.alpha})`;
+        ctx.fill();
+      } else {
+        ctx.beginPath();
+        ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(240,237,230,${(0.2+0.1*glow)*n.alpha})`;
+        ctx.fill();
+      }
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  init();
+  draw();
+  window.addEventListener('resize',()=>{resize();init()});
+})();
+
+/* ── HERO TEXT REVEAL ────────────────────────────────────────────────── */
+(function(){
+  const words = document.querySelectorAll('.hero-headline .word');
+  let delay = 300;
+  words.forEach((w,i)=>{
+    setTimeout(()=>{
+      w.style.transition='transform 0.65s cubic-bezier(0.16,1,0.3,1), opacity 0.65s ease';
+      w.style.transform='translateY(0)';
+      w.style.opacity='1';
+    }, delay + i * 110);
+  });
+})();
+
+/* ── SCROLL REVEAL ───────────────────────────────────────────────────── */
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  els.forEach(el=>io.observe(el));
+})();
+
+/* ── STAT COUNTER ────────────────────────────────────────────────────── */
+(function(){
+  const proof = document.getElementById('proof');
+  let fired = false;
+  const io = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting && !fired){
+      fired = true;
+      io.disconnect();
+    }
+  },{threshold:0.3});
+  io.observe(proof);
+})();
+</script>
+</body>
+</html>
